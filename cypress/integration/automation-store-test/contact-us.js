@@ -1,8 +1,8 @@
 describe("This is the test for contact us page of automation-store", () => {
   it("Should display and submit the details of contact us page", () => {
     cy.visit("https://www.automationteststore.com/");
-    // cy.get(".info_links_footer > :nth-child(5) > a").click();
-    cy.xpath("//a[contains(@href, 'contact')]").click();
+    cy.get("a[href$='contact']").click();
+    // cy.xpath("//a[contains(@href, 'contact')]").click();
     // cy.get("#ContactUsFrm_first_name").type("Bhupendra");
     cy.xpath("//input[contains(@id, 'ContactUsFrm_first_name')]").type(
       "Bhupendra"
@@ -17,7 +17,7 @@ describe("This is the test for contact us page of automation-store", () => {
     cy.xpath("//textarea[@id = 'ContactUsFrm_enquiry']").type(
       "Sorry, i don't have any enquiry at the moment."
     );
-    // cy.get(".col-md-6 > .btn").click();
-    cy.xpath("//button[@title='Submit']").click();
+    cy.get("button[title='Submit']").click();
+    // cy.xpath("//button[@title='Submit']").click();
   });
 });
