@@ -19,5 +19,9 @@ describe("This is the test for contact us page of automation-store", () => {
     );
     cy.get("button[title='Submit']").click();
     // cy.xpath("//button[@title='Submit']").click();
+    cy.get(".mb40 > :nth-child(3)").should(
+      "have.text",
+      "Your enquiry has been successfully sent to the store owner!"
+    );
   });
 });
