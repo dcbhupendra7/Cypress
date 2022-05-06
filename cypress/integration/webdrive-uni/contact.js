@@ -10,5 +10,6 @@ describe("Test case for web driver contact us page", () => {
       "Hi, how are you?"
     );
     cy.get("input[value='SUBMIT']").click();
+    cy.get("h1").should("have.text", "Thank You for your Message!");
   });
 });
