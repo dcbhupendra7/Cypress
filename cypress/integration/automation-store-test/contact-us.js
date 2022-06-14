@@ -6,7 +6,7 @@ describe("This is the test for contact us page of automation-store", () => {
     cy.get("#ContactUsFrm_first_name").type("Bhupendra");
     // cy.xpath("//input[contains(@id, 'ContactUsFrm_first_name')]").type(
     //   "Bhupendra"
-    // );
+
     cy.get("#ContactUsFrm_email")
       .should("have.attr", "name", "email")
       .type("bhupendradangi5@gmail.com");
