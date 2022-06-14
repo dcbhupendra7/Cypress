@@ -3,6 +3,10 @@ describe("Test case for web driver contact us page", () => {
     // cy.visit("http://www.webdriveruniversity.com/");
     // cy.get("#contact-us").should("exist").click();
     cy.visit("http://www.webdriveruniversity.com/Contact-Us/contactus.html");
+    cy.document().should("have.property", "charset").and("eq", "UTF-8");
+    // cy.document().should("have.property", "name").and("eq", "author");
+    cy.title().should("include", "WebDriver | Contact Us");
+    cy.url().should("include", "contactus");
     cy.get('[name="first_name"]').should("exist").type("Bhupendra");
     cy.get('[name="last_name"]').should("exist").type("Dangi");
     cy.get('[name="email"]').should("exist").type("bhupendradangi@gmail.com");
