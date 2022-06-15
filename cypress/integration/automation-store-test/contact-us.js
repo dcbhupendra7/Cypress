@@ -21,5 +21,6 @@ describe("This is the test for contact us page of automation-store", () => {
     // );
     cy.get(".col-md-6 > .btn").click();
     // cy.xpath("//button[@title='Submit']").click();
+    cy.log("Hello how are you?");
   });
 });

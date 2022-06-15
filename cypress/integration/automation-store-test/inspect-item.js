@@ -9,4 +9,8 @@ describe("This is the test for inspecting the items", () => {
     cy.visit("https://www.automationteststore.com/");
     cy.get(".prdocutname").contains("Skinsheen Bronzer Stick").click();
   });
+  it.only("Click on first product using index", () => {
+    cy.visit("https://www.automationteststore.com/");
+    cy.get(".fixed_wrapper ").find(".prdocutname").eq("1").click();
+  });
 });
