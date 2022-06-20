@@ -1,7 +1,11 @@
 describe("This is the test for contact us page of automation-store", () => {
   it("Should display and submit the details of contact us page", () => {
     cy.visit("https://www.automationteststore.com/");
-    cy.get(".info_links_footer > :nth-child(5) > a").click();
+    cy.get("a[href$='contact']")
+      .click()
+      .then((className) => {
+        console.log("On clicking contact us: " + className.text());
+      });
     // cy.xpath("//a[contains(@href, 'contact')]").click();
     cy.get("#ContactUsFrm_first_name").type("Bhupendra");
     // cy.xpath("//input[contains(@id, 'ContactUsFrm_first_name')]").type(
