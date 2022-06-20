@@ -24,7 +24,7 @@ describe("Verifying variables, cypress commands and jquery commands", () => {
     cy.get("a[href*='product/category&path=']").contains("Makeup").click();
     cy.get("a[href*='product/category&path=']").contains("Skincare").click();
   });
-  it("Checking Header text for makeup page", () => {
+  it.only("Checking Header text for makeup page", () => {
     cy.visit("https://automationteststore.com/");
     cy.get("a[href*='product/category&path=']").contains("Makeup").click();
     cy.get("h1 .maintext").then(($headerText) => {
