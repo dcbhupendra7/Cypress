@@ -2,7 +2,9 @@ describe("Test case for web driver contact us page", () => {
   it("Should sumbit contact us details for webdriver page", () => {
     // cy.visit("http://www.webdriveruniversity.com/");
     // cy.get("#contact-us").should("exist").click();
-    cy.visit("http://www.webdriveruniversity.com/Contact-Us/contactus.html");
+    // cy.visit("http://www.webdriveruniversity.com/Contact-Us/contactus.html");
+    cy.visit("http://www.webdriveruniversity.com");
+    cy.get("#contact-us").invoke("removeAttr", "target").click();
     cy.document().should("have.property", "charset").and("eq", "UTF-8");
     // cy.document().should("have.property", "name").and("eq", "author");
     cy.title().should("include", "WebDriver | Contact Us");
