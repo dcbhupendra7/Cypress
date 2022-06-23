@@ -35,12 +35,12 @@ describe("Use of Alias and Invoke", () => {
     cy.get(".thumbnail").find(".pricenew").invoke("text").as("saleItemPrice");
     var totalSum = 0;
     cy.get("@itemPrice").then(($el) => {
-      var productPrice = $el.split("$");
+      var nonSaleItem = $el.split("$");
       var i;
       var nonSaleItemSum = 0;
-      for (i = 0; i < productPrice.length; i++) {
-        cy.log(productPrice[i]);
-        nonSaleItemSum += Number(productPrice[i]);
+      for (i = 0; i < nonSaleItem.length; i++) {
+        cy.log(nonSaleItem[i]);
+        nonSaleItemSum += Number(nonSaleItem[i]);
       }
       totalSum += nonSaleItemSum;
       cy.log("Sum of non-sale product: " + nonSaleItemSum);
