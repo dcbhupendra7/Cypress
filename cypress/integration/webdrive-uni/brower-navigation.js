@@ -10,6 +10,7 @@ describe("Validate webdriver homepage links", () => {
     cy.reload();
     cy.reload(true); //Reload without cache
     cy.go("back");
+    //Remove attribute used to remove the target element
     cy.get("#login-portal")
       .invoke("removeAttr", "target")
       .click({ force: "true" });
