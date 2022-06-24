@@ -22,7 +22,7 @@ describe("Test alter window", () => {
     });
     cy.get("#confirm-alert-text").contains("You pressed OK!");
   });
-  it.only("Check alert message when clicking cancel button", () => {
+  it("Check alert message when clicking cancel button", () => {
     cy.visit("http://www.webdriveruniversity.com");
     cy.get("#popup-alerts")
       .invoke("removeAttr", "target")
@@ -33,5 +33,24 @@ describe("Test alter window", () => {
       return false;
     });
     cy.get("#confirm-alert-text").contains("You pressed Cancel!");
+  });
+  it.only("Check alert message with stub", () => {
+    cy.visit("http://www.webdriveruniversity.com");
+    cy.get("#popup-alerts")
+      .invoke("removeAttr", "target")
+      .click({ force: true });
+    const stub = cy.stub();
+    cy.on("window:confirm", stub);
+    cy.get("#button4")
+      .click()
+      .then(() => {
+        expect(stub.getCall(0)).to.be.calledWith("Press a button!");
+      })
+      .then(() => {
+        return true;
+      })
+      .then(() => {
+        cy.get("#confirm-alert-text").contains("You pressed OK!");
+      });
   });
 });
