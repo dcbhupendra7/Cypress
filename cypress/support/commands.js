@@ -20,6 +20,35 @@
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
 //
+
+Cypress.Commands.add("selectProduct", (productName) => {
+  cy.get(".fixed_wrapper .prdocutname").each(($el, index, $li) => {
+    if ($el.text().includes("Eau Parfumee au The Vert Shampoo")) {
+      cy.wrap($el).click();
+    }
+  });
+});
+
+Cypress.Commands.add("addProductToBasket", (productName) => {
+  cy.get(".fixed_wrapper .prdocutname").each(($el, index, $li) => {
+    if ($el.text() === productName) {
+      cy.log($el.text());
+      cy.get(".productcart").eq(index).click({ force: true });
+    }
+  });
+});
+
+Cypress.Commands.add(
+  "webDriverUni_ContactForm_Submission",
+  (firstName, lastName, email, comments, $selector, textToLocate) => {
+    cy.get('[name="first_name"]').should("exist").type(firstName);
+    cy.get('[name="last_name"]').should("exist").type(lastName);
+    cy.get('[name="email"]').should("exist").type(email);
+    cy.get('[name="message"]').should("exist").type(comments);
+    cy.get('[type="submit"]').should("exist").click();
+    cy.get($selector).contains(textToLocate);
+  }
+);
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
