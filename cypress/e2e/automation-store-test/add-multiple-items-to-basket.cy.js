@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
 describe("Add multiple items to basket", () => {
-  before(function () {
-    cy.fixture("product").then(function (data) {
+  before(() => {
+    cy.fixture("product").then((data) => {
       globalThis.data = data;
     });
   });
@@ -12,9 +12,9 @@ describe("Add multiple items to basket", () => {
     cy.get("a[href*='product/category&path=']").contains("Hair Care").click();
   });
   it("Add specific items to basket", () => {
-    globalThis.data.productName.forEach(function (element) {
+    globalThis.data.productName.forEach((element) => {
       cy.addProductToBasket(element);
     });
-    cy.get(".dropdown-toggle > .fa").click({ force: true });
+    cy.get(".dropdown-toggle > .fa").click();
   });
 });
