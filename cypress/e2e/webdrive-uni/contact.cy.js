@@ -12,6 +12,7 @@ describe("Test case for web driver contact us page", () => {
   });
   before(() => {
     cy.fixture("example").then((data) => {
+      cy.viewport(550, 750);
       // this.data = data;
       globalThis.data = data;
     });

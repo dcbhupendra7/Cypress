@@ -13,6 +13,7 @@ class Contact_Us_PO {
     cy.get('[name="message"]').should("exist").type(comments);
     cy.get('[type="submit"]').should("exist").click();
     cy.get($selector).wait(3000).contains(textToLocate, { timeout: 30000 });
+    cy.screenshot();
   }
 }
 export default Contact_Us_PO;
