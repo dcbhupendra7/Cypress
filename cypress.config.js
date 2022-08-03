@@ -7,6 +7,7 @@ module.exports = defineConfig({
 
   e2e: {
     baseUrl: "http://www.webdriveruniversity.com",
+
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
@@ -14,7 +15,6 @@ module.exports = defineConfig({
     },
   },
   env: {
-    webdriveruni_homepage: "http://www.webdriveruniversity.com",
     first_name: "John",
     last_name: "Curry",
     email: "johncurry@gmail.com",

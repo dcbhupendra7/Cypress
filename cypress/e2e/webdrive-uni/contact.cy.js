@@ -2,10 +2,10 @@
 
 describe("Test case for web driver contact us page", () => {
   beforeEach(() => {
-    cy.visit(Cypress.env("web_driverUniHome" + "/Contact-Us/contactus.html"));
-    // cy.document().should("have.property", "charset").and("eq", "UTF-8");
-    // cy.title().should("include", "WebDriver | Contact Us");
-    // cy.url().should("include", "contactus");
+    cy.visit("/Contact-Us/contactus.html");
+    cy.document().should("have.property", "charset").and("eq", "UTF-8");
+    cy.title().should("include", "WebDriver | Contact Us");
+    cy.url().should("include", "contactus");
   });
   before(() => {
     cy.fixture("example").then((data) => {
