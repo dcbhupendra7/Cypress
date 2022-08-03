@@ -1,9 +1,6 @@
 describe("Verify checkboxes via webuni", () => {
   beforeEach(() => {
-    cy.visit("/");
-    cy.get("#dropdown-checkboxes-radiobuttons")
-      .invoke("removeAttr", "target")
-      .click({ force: true });
+    cy.navigateTO_webdriverUni_radioButton();
   });
   it("Check and validate chckboxes", () => {
     // cy.get("#checkboxes > :nth-child(1) > input").check().should("be.checked");

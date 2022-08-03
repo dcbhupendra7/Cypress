@@ -29,6 +29,12 @@ Cypress.Commands.add("selectProduct", (productName) => {
   });
 });
 
+Cypress.Commands.add("navigateTO_webdriverUni_Homepage", () => {
+  cy.visit("/");
+});
+Cypress.Commands.add("navigateTO_webdriverUni_radioButton", () => {
+  cy.visit("/" + "/Dropdown-Checkboxes-RadioButtons/index.html");
+});
 Cypress.Commands.add("addProductToBasket", (productName) => {
   cy.get(".fixed_wrapper .prdocutname").each(($el, index, $li) => {
     if ($el.text() === productName) {
@@ -52,6 +58,7 @@ Cypress.Commands.add(
     cy.get($selector).contains(textToLocate);
   }
 );
+
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
