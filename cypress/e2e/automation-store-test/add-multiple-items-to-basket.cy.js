@@ -11,6 +11,8 @@ describe("Add multiple items to basket", () => {
   });
 
   beforeEach(() => {
+    cy.clearLocalStorage();
+    cy.clearCookies();
     autoStore_Homepage_PO.accessHomePage();
     autoStore_Homepage_PO.clickOn_HairCare();
   });
